@@ -1,0 +1,40 @@
+@mixin transition($type, $value) {
+    transition: $type ease-in $value;
+    -webkit-transition: $type ease-in $value;
+    -moz-transition: $type ease-in $value;
+    -ms-transition: $type ease-in $value;
+    -o-transition: $type ease-in $value;
+}
+
+@mixin flex {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: -moz-flex;
+    display: -o-flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
+@mixin rems($size) {
+    font-size: $size; //Fallback in px
+    font-size: #{$size / $body-font-size}rem;
+}
+ 
+@mixin mobile {
+    @media (max-width: #{$mobile-width}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: #{$tablet-width}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (max-width: #{$desktop-width}) {
+        @content;
+    }
+}
